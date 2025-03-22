@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useRef } from 'react';
 import { cn } from '../lib/utils';
 import Image from 'next/image';
@@ -16,10 +18,12 @@ const ChatAnimation: React.FC<ChatAnimationProps> = ({ className }) => {
         <div className="absolute inset-0 bg-gradient-to-b from-blue-500/30 to-rose-500/30 animate-pulse-slow" />
       </div>
 
-      <div className={cn([
-        'relative w-full h-full overflow-hidden rounded-3xl bg-gradient-to-br from-black/90 to-black/50 backdrop-blur-lg shadow-2xl border border-blue-500/20',
-        className
-      ])}>
+      <div
+        className={cn(
+          'relative w-full h-full overflow-hidden rounded-3xl bg-gradient-to-br from-black/90 to-black/50 backdrop-blur-lg shadow-2xl border border-blue-500/20',
+          className || '' // ✅ FIX: ensure string not array
+        )}
+      >
         <div className="absolute top-0 left-0 right-0 h-12 bg-gradient-to-b from-black/80 to-black/40 backdrop-blur-sm z-10 flex items-center px-3 border-b border-blue-500/20">
           <div className="flex items-center">
             <div className="w-8 h-8 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center mr-2">
