@@ -13,7 +13,7 @@ export default function BlogPost() {
   const id = Number(params?.id ?? -1);
   const [showPrivacyPolicy, setShowPrivacyPolicy] = useState(false);
 
-  const post = blogPosts.find((p) => p.id === id)
+  const post = blogPosts.find((p) => p.id === Number(params?.id ?? -1));console.log('Post ID:', params?.id, post);
 
   if (!post) {
     return (
