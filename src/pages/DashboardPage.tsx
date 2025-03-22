@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation'; // ✅ Correct import
 import {
   Bell, Calendar, CheckCircle, ListTodo, Mic, Image as ImageIcon,
   Users, Settings, LogOut, Mail, FileText, Globe, ChevronLeft, ChevronRight,
@@ -32,7 +32,7 @@ interface ListItem {
 }
 
 const DashboardPage = () => {
-  const navigate = useNavigate();
+  const router = useRouter(); // ✅ Correct hook for navigation
   const [integrations, setIntegrations] = useState({
     calendar: false,
     drive: false,
@@ -86,7 +86,7 @@ const DashboardPage = () => {
   const filteredContacts = contacts.filter(contact => contact.category === activeContactTab);
 
   const handleLogout = () => {
-    navigate('/');
+    router.push('/');
   };
 
   const toggleIntegration = (key: keyof typeof integrations) => {
