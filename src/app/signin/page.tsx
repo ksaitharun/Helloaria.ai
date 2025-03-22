@@ -1,12 +1,12 @@
-'use client'
+'use client';
 
-import { useState } from 'react'
-import { useRouter } from 'next/navigation'
-import Link from 'next/link'
-import Image from 'next/image'
-import { ArrowLeft } from 'lucide-react'
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import Image from 'next/image';
+import { ArrowLeft } from 'lucide-react';
+import ariaIcon from '/public/assets/aria-icon.svg'; // adjust if needed
 
-export default function SignIn() {
+const SignInPage = () => {
   const router = useRouter();
   const [phone, setPhone] = useState('');
   const [pin, setPin] = useState('');
@@ -14,8 +14,7 @@ export default function SignIn() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Simple validation for demo
+
     if (phone === '9985474932' && pin === '12345') {
       router.push('/dashboard');
     } else {
@@ -26,26 +25,19 @@ export default function SignIn() {
   return (
     <div className="min-h-screen pt-24">
       <div className="container mx-auto px-6">
-        <Link 
-          href="/"
+        <button 
+          onClick={() => router.push('/')}
           className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors duration-300 mb-12"
         >
           <ArrowLeft className="w-4 h-4 mr-2" />
           Back to Home
-        </Link>
+        </button>
 
         <div className="max-w-md mx-auto">
           <div className="text-center mb-8">
             <div className="inline-block relative mb-6">
               <div className="absolute -inset-2 bg-gradient-to-r from-blue-500 to-rose-500 rounded-full opacity-20 blur-lg" />
-              <Image 
-                src="/assets/aria-icon.svg" 
-                alt="Aria" 
-                width={64}
-                height={64}
-                className="relative"
-                priority
-              />
+              <Image src={ariaIcon} alt="Aria" width={64} height={64} className="relative" />
             </div>
             <h1 className="text-3xl font-bold mb-2">Welcome Back</h1>
             <p className="text-gray-400">Sign in to access your dashboard</p>
@@ -96,4 +88,6 @@ export default function SignIn() {
       </div>
     </div>
   );
-}
+};
+
+export default SignInPage;
