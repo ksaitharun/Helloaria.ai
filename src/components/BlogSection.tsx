@@ -1,7 +1,7 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
-import { blogPosts } from '@/lib/blog-data';
+import blogPosts from '@/lib/blog-data';
 
 const BlogSection = () => {
   return (
