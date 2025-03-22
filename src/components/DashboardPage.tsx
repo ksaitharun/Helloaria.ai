@@ -105,7 +105,7 @@ const DashboardPage = () => {
   const toggleListItemComplete = (itemId: string) => {
     setLists(prev => ({
       ...prev,
-      [activeListTab]: prev[activeListTab].map(item =>
+      [activeListTab]: prev[activeListTab as keyof typeof prev].map(item =>
         item.id === itemId ? { ...item, completed: !item.completed } : item
       )
     }));
