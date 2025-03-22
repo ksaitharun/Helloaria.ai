@@ -54,7 +54,7 @@ const blogPosts: Record<number, BlogPost> = {
 export default function BlogPostPage() {
   const params = useParams();
   const id = typeof params?.id === 'string' ? Number(params.id) : null;
-  
+  const [showPrivacyPolicy, setShowPrivacyPolicy] = useState(false);
   const post = id ? blogPosts[id] : null;
   
   if (!id || !post) {
