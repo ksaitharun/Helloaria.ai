@@ -7,7 +7,14 @@ import Image from 'next/image';
 import { ArrowLeft } from 'lucide-react';
 import Footer from '../components/Footer';
 
-const blogPosts: Record<number, any> = {
+const blogPosts: Record<number, {
+  title: string;
+  date: string;
+  readTime: string;
+  category: string;
+  image: string;
+  content: string;
+}> = {
   1: {
     title: "How Hello Aria's WhatsApp AI Assistant Enhances Productivity 🚀",
     date: "March 14, 2024",
@@ -97,9 +104,9 @@ export default function BlogPostPage() {
           </div>
 
           <div className="prose prose-invert max-w-none">
-            {post.content.split('\n\n').map((paragraph, index) => (
+            {post.content.split('\n\n').map((paragraph: string, index: number) => (
               <p key={index} className="mb-6 leading-relaxed">
-                {paragraph.split('\n').map((line, lineIndex, array) => (
+                {paragraph.split('\n').map((line: string, lineIndex: number, array: string[]) => (
                   <span key={lineIndex}>
                     {line}
                     {lineIndex < array.length - 1 && <br />}
