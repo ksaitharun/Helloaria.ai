@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react';
 import { X } from 'lucide-react';
 
@@ -28,7 +30,10 @@ const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({ showPrivacyPolicy, setSho
             <p>Your privacy matters to us. This policy outlines how we handle your data with transparency and care.</p>
 
             <h4 className="text-lg font-semibold mt-6 mb-4">Introduction</h4>
-            <p>Welcome to ARIA, the WhatsApp AI chatbot service provided by Realityrift Innovations Pvt. Ltd. ("we," "us," or "our"). We value your privacy and are committed to protecting your personal information.</p>
+            <p>
+              Welcome to ARIA, the WhatsApp AI chatbot service provided by Realityrift Innovations Pvt. Ltd. (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;). 
+              We value your privacy and are committed to protecting your personal information.
+            </p>
 
             <h4 className="text-lg font-semibold mt-6 mb-4">Key Privacy Assurance</h4>
             <ul className="list-disc pl-6 space-y-2">
@@ -53,7 +58,7 @@ const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({ showPrivacyPolicy, setSho
               <li>Log Data: IP address and system errors</li>
             </ul>
 
-            <h4 className="text-lg font-semibold mt-6 mb-4">Contact & Support</h4>
+            <h4 className="text-lg font-semibold mt-6 mb-4">Contact &amp; Support</h4>
             <p>For questions or concerns, contact us at:</p>
             <p className="text-indigo-400">info@realityrift.co</p>
 
