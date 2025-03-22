@@ -1,3 +1,5 @@
+// src/app/(main)/layout.tsx
+
 export const metadata = {
   title: 'Hello Aria',
   description: 'Your WhatsApp AI Assistant for Productivity and Organization',
@@ -8,10 +10,5 @@ export default function MainLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <html lang="en">
-      <head />
-      <body>{children}</body>
-    </html>
-  );
+  return <>{children}</>; // no <html> or <body> here
 }
