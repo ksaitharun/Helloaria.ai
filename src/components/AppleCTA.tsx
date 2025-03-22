@@ -35,7 +35,7 @@ const notifications = [
 
 const AppleCTA: React.FC<AppleCTAProps> = ({ handleRipple }) => {
   const [scrollProgress, setScrollProgress] = useState(0);
-  const whatsappLink = "https://wa.me/917075471676";
+  const [whatsappLink, setWhatsappLink] = useState("https://wa.me/917075471676");
   const [currentMonth, setCurrentMonth] = useState(new Date());
   const sectionRef = useRef<HTMLDivElement>(null);
 
