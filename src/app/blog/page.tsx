@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowLeft } from 'lucide-react';
-import Footer from '../components/Footer'; // Adjust path if needed
+import Footer from '@/components/Footer'; // Adjust path if needed
 
 const blogPosts = [
   {
