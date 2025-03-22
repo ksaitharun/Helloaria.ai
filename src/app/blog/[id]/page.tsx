@@ -10,7 +10,7 @@ import { blogPosts } from '@/lib/blog-data';
 
 export default function BlogPost() {
   const params = useParams<{ id: string }>();
-  const id = Number(useParams()?.id)
+  const id = Number(params?.id ?? -1);
   const [showPrivacyPolicy, setShowPrivacyPolicy] = useState(false);
 
   const post = blogPosts.find((p) => p.id === id)
