@@ -1,3 +1,5 @@
+import './globals.css';
+
 export const metadata = {
   title: 'Hello Aria',
   description: 'Your WhatsApp AI Assistant for Productivity and Organization',
@@ -10,6 +12,7 @@ export default function MainLayout({
 }) {
   return (
     <html lang="en">
+      <head />
       <body>{children}</body>
     </html>
   );
