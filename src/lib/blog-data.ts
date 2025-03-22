@@ -164,3 +164,4 @@ Experience the future of efficiency—get started with Hello Aria today! 🚀�
 `
   }
 ];
+export default blogPosts;
