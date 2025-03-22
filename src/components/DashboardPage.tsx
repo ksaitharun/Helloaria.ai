@@ -31,6 +31,8 @@ interface ListItem {
   completed: boolean;
 }
 
+type ListCategory = 'market' | 'work' | 'personal' | 'shopping';
+
 const DashboardPage = () => {
   const router = useRouter();
   const [integrations, setIntegrations] = useState({
@@ -40,7 +42,7 @@ const DashboardPage = () => {
     flight: false
   });
   const [activeContactTab, setActiveContactTab] = useState<'family' | 'friends' | 'work'>('family');
-  const [activeListTab, setActiveListTab] = useState('market');
+  const [activeListTab, setActiveListTab] = useState<ListCategory>('market');
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -50,7 +52,7 @@ const DashboardPage = () => {
     { id: '3', text: 'Remove AWS support', completed: false, date: 'Apr 29, 2025, 9:00 AM' }
   ]);
 
-  const [lists, setLists] = useState({
+  const [lists, setLists] = useState<Record<ListCategory, ListItem[]>>({
     market: [
       { id: '1', text: 'milk', completed: false },
       { id: '2', text: 'bread', completed: false },
@@ -105,14 +107,14 @@ const DashboardPage = () => {
   const toggleListItemComplete = (itemId: string) => {
     setLists(prev => ({
       ...prev,
-      [activeListTab]: prev[activeListTab as keyof typeof prev].map(item =>
+      [activeListTab]: prev[activeListTab].map(item =>
         item.id === itemId ? { ...item, completed: !item.completed } : item
       )
     }));
   };
 
   const addListItem = () => {
-    const newItem = {
+    const newItem: ListItem = {
       id: Date.now().toString(),
       text: '',
       completed: false
@@ -122,9 +124,8 @@ const DashboardPage = () => {
       [activeListTab]: [...prev[activeListTab], newItem]
     }));
   };
-
   const addContact = () => {
-    const newContact = {
+    const newContact: Contact = {
       id: Date.now().toString(),
       name: 'New Contact',
       phone: '+91 ',
@@ -135,7 +136,6 @@ const DashboardPage = () => {
   };
 
   const editContact = (contactId: string) => {
-    // In a real app, this would open a dialog to edit the contact
     console.log('Editing contact:', contactId);
   };
 
@@ -169,7 +169,7 @@ const DashboardPage = () => {
 
   return (
     <div className="min-h-screen bg-black">
-      {/* Settings Dialog */}
+            {/* Settings Dialog */}
       <SettingsDialog 
         isOpen={isSettingsOpen}
         onClose={() => setIsSettingsOpen(false)}
@@ -204,8 +204,7 @@ const DashboardPage = () => {
           <Settings className="w-6 h-6 text-gray-400" />
         </button>
       </div>
-
-      {/* Sidebar */}
+            {/* Sidebar */}
       <div className={`fixed left-0 top-0 bottom-0 w-64 bg-gradient-to-br from-black/80 to-black/40 backdrop-blur-lg border-r border-blue-500/20 transform transition-transform duration-300 z-40 ${
         isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
       } md:translate-x-0`}>
@@ -255,8 +254,7 @@ const DashboardPage = () => {
           </button>
         </div>
       </div>
-
-      {/* Main Content */}
+            {/* Main Content */}
       <div className="md:ml-64 p-4 md:p-8 pt-20 md:pt-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {/* Upcoming Reminders */}
@@ -283,9 +281,7 @@ const DashboardPage = () => {
                 </div>
               ))}
             </div>
-          </div>
-
-          {/* Lists */}
+          </div>          {/* Lists */}
           <div className="bg-gradient-to-br from-black/80 to-black/40 backdrop-blur-lg rounded-2xl p-4 md:p-6 border border-blue-500/20">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-lg font-semibold">Lists</h2>
@@ -329,9 +325,7 @@ const DashboardPage = () => {
                 </div>
               ))}
             </div>
-          </div>
-
-          {/* Calendar */}
+          </div>          {/* Calendar */}
           <div className="bg-gradient-to-br from-black/80 to-black/40 backdrop-blur-lg rounded-2xl p-4 md:p-6 border border-blue-500/20">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-lg font-semibold">Calendar</h2>
@@ -366,9 +360,7 @@ const DashboardPage = () => {
                 </div>
               ))}
             </div>
-          </div>
-
-          {/* Contacts with Tabs */}
+          </div>          {/* Contacts with Tabs */}
           <div className="bg-gradient-to-br from-black/80 to-black/40 backdrop-blur-lg rounded-2xl p-4 md:p-6 border border-blue-500/20">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-lg font-semibold">Contacts</h2>
@@ -382,36 +374,19 @@ const DashboardPage = () => {
             
             {/* Tabs */}
             <div className="flex space-x-2 mb-6 overflow-x-auto pb-2 scrollbar-hide">
-              <button
-                onClick={() => setActiveContactTab('family')}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                  activeContactTab === 'family'
-                    ? 'bg-blue-500/20 text-blue-400'
-                    : 'text-gray-400 hover:text-white hover:bg-white/5'
-                }`}
-              >
-                Family
-              </button>
-              <button
-                onClick={() => setActiveContactTab('friends')}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                  activeContactTab === 'friends'
-                    ? 'bg-blue-500/20 text-blue-400'
-                    : 'text-gray-400 hover:text-white hover:bg-white/5'
-                }`}
-              >
-                Friends
-              </button>
-              <button
-                onClick={() => setActiveContactTab('work')}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                  activeContactTab === 'work'
-                    ? 'bg-blue-500/20 text-blue-400'
-                    : 'text-gray-400 hover:text-white hover:bg-white/5'
-                }`}
-              >
-                Work
-              </button>
+              {(['family', 'friends', 'work'] as const).map((tab) => (
+                <button
+                  key={tab}
+                  onClick={() => setActiveContactTab(tab)}
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                    activeContactTab === tab
+                      ? 'bg-blue-500/20 text-blue-400'
+                      : 'text-gray-400 hover:text-white hover:bg-white/5'
+                  }`}
+                >
+                  {tab.charAt(0).toUpperCase() + tab.slice(1)}
+                </button>
+              ))}
             </div>
 
             <div className="space-y-4">
@@ -435,125 +410,68 @@ const DashboardPage = () => {
                 </div>
               ))}
             </div>
-          </div>
-
-          {/* Integrations */}
+          </div>          {/* Integrations */}
           <div className="bg-gradient-to-br from-black/80 to-black/40 backdrop-blur-lg rounded-2xl p-4 md:p-6 border border-blue-500/20">
             <h2 className="text-lg font-semibold mb-6">Integrations</h2>
             <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-[#4285F4]/10 rounded-lg flex items-center justify-center">
-                    <Calendar className="w-5 h-5 text-[#4285F4]" />
+              {[
+                {
+                  key: 'calendar',
+                  title: 'Google Calendar',
+                  description: 'Sync your events',
+                  icon: <Calendar className="w-5 h-5 text-[#4285F4]" />,
+                  color: '#4285F4',
+                },
+                {
+                  key: 'drive',
+                  title: 'Google Drive',
+                  description: 'Access your files',
+                  icon: <FileText className="w-5 h-5 text-[#0F9D58]" />,
+                  color: '#0F9D58',
+                },
+                {
+                  key: 'gmail',
+                  title: 'Gmail',
+                  description: 'Manage emails',
+                  icon: <Mail className="w-5 h-5 text-[#EA4335]" />,
+                  color: '#EA4335',
+                },
+                {
+                  key: 'flight',
+                  title: 'Flight Status',
+                  description: 'Track flights',
+                  icon: <Globe className="w-5 h-5 text-[#6366F1]" />,
+                  color: '#6366F1',
+                },
+              ].map(({ key, title, description, icon, color }) => (
+                <div key={key} className="flex items-center justify-between">
+                  <div className="flex items-center space-x-3">
+                    <div className={`w-8 h-8`} style={{ backgroundColor: `${color}1A`, borderRadius: '0.5rem' }}>
+                      <div className="flex items-center justify-center w-full h-full">
+                        {icon}
+                      </div>
+                    </div>
+                    <div>
+                      <p className="font-medium">{title}</p>
+                      <p className="text-xs text-gray-400">{description}</p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="font-medium">Google Calendar</p>
-                    <p className="text-xs text-gray-400">Sync your events</p>
-                  </div>
+                  <button
+                    onClick={() => toggleIntegration(key as keyof typeof integrations)}
+                    className={`relative w-12 h-6 rounded-full transition-colors duration-300 ${
+                      integrations[key as keyof typeof integrations] ? `bg-[${color}]` : 'bg-gray-700'
+                    }`}
+                  >
+                    <span
+                      className={`absolute w-4 h-4 bg-white rounded-full top-1 transition-transform duration-300 ${
+                        integrations[key as keyof typeof integrations] ? 'left-7' : 'left-1'
+                      }`}
+                    />
+                  </button>
                 </div>
-                <button
-                  onClick={() => toggleIntegration('calendar')}
-                  className={`relative w-12 h-6 rounded-full transition-colors duration-300 ${
-                    integrations.calendar ? 'bg-[#4285F4]' : 'bg-gray-700'
-                  }`}
-                >
-                  <span className={`absolute w-4 h-4 bg-white rounded-full top-1 transition-transform duration-300 ${
-                    integrations.calendar ? 'left-7' : 'left-1'
-                  }`} />
-                </button>
-              </div>
-
-              <div className="flex items-center justify-between">
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-[#0F9D58]/10 rounded-lg flex items-center justify-center">
-                    <FileText className="w-5 h-5 text-[#0F9D58]" />
-                  </div>
-                  <div>
-                    <p className="font-medium">Google Drive</p>
-                    <p className="text-xs text-gray-400">Access your files</p>
-                  </div>
-                </div>
-                <button
-                  onClick={() => toggleIntegration('drive')}
-                  className={`relative w-12 h-6 rounded-full transition-colors duration-300 ${
-                    integrations.drive ? 'bg-[#0F9D58]' : 'bg-gray-700'
-                  }`}
-                >
-                  <span className={`absolute w-4 h-4 bg-white rounded-full top-1 transition-transform duration-300 ${
-                    integrations.drive ? 'left-7' : 'left-1'
-                  }`} />
-                </button>
-              </div>
-
-              <div className="flex items-center justify-between">
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-[#EA4335]/10 rounded-lg flex items-center justify-center">
-                    <Mail className="w-5 h-5 text-[#EA4335]" />
-                  </div>
-                  <div>
-                    <p className="font-medium">Gmail</p>
-                    <p className="text-xs text-gray-400">Manage emails</p>
-                  </div>
-                </div>
-                <button
-                  onClick={() => toggleIntegration('gmail')}
-                  className={`relative w-12 h-6 rounded-full transition-colors duration-300 ${
-                    integrations.gmail ? 'bg-[#EA4335]' : 'bg-gray-700'
-                  }`}
-                >
-                  <span className={`absolute w-4 h-4 bg-white rounded-full top-1 transition-transform duration-300 ${
-                    integrations.gmail ? 'left-7' : 'left-1'
-                  }`} />
-                </button>
-              </div>
-
-              <div className="flex items-center justify-between">
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-[#6366F1]/10 rounded-lg flex items-center justify-center">
-                    <Globe className="w-5 h-5 text-[#6366F1]" />
-                  </div>
-                  <div>
-                    <p className="font-medium">Flight Status</p>
-                    <p className="text-xs text-gray-400">Track flights</p>
-                  </div>
-                </div>
-                <button
-                  onClick={() => toggleIntegration('flight')}
-                  className={`relative w-12 h-6 rounded-full transition-colors duration-300 ${
-                    integrations.flight ? 'bg-[#6366F1]' : 'bg-gray-700'
-                  }`}
-                >
-                  <span className={`absolute w-4 h-4 bg-white rounded-full top-1 transition-transform duration-300 ${
-                    integrations.flight ? 'left-7' : 'left-1'
-                  }`} />
-                </button>
-              </div>
+              ))}
             </div>
-          </div>
-
-          {/* Productivity Stats */}
-          <div className="bg-gradient-to-br from-black/80 to-black/40 backdrop-blur-lg rounded-2xl p-4 md:p-6 border border-blue-500/20">
-            <h2 className="text-lg font-semibold mb-6">Your Productivity</h2>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="bg-white/5 rounded-lg p-4">
-                <p className="text-2xl font-bold text-blue-400">3</p>
-                <p className="text-sm text-gray-400">Upcoming Reminders</p>
-              </div>
-              <div className="bg-white/5 rounded-lg p-4">
-                <p className="text-2xl font-bold text-blue-400">296</p>
-                <p className="text-sm text-gray-400">Completed Reminders</p>
-              </div>
-              <div className="bg-white/5 rounded-lg p-4">
-                <p className="text-2xl font-bold text-blue-400">8</p>
-                <p className="text-sm text-gray-400">Voice Notes this Month</p>
-              </div>
-              <div className="bg-white/5 rounded-lg p-4">
-                <p className="text-2xl font-bold text-blue-400">10</p>
-                <p className="text-sm text-gray-400">Images this Month</p>
-              </div>
-            </div>
-          </div>
-        </div>
+          </div>        </div>
       </div>
     </div>
   );
