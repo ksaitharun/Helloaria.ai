@@ -5,7 +5,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowLeft } from 'lucide-react';
-import Footer from '@/components/Footer';
+import Footer from '../components/Footer';
 
 const blogPosts: Record<number, any> = {
   1: {
