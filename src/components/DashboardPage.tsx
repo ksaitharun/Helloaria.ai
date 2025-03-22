@@ -295,7 +295,7 @@ const DashboardPage = () => {
 
             {/* List Tabs */}
             <div className="flex space-x-2 mb-6 overflow-x-auto pb-2 scrollbar-hide">
-              {Object.keys(lists).map((tab) => (
+              {(Object.keys(lists) as ListCategory[]).map((tab) => (
                 <button
                   key={tab}
                   onClick={() => setActiveListTab(tab)}
