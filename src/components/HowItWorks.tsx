@@ -1,4 +1,5 @@
-import React from 'react';
+'use client'
+
 import { Smartphone, Send, Sparkles } from 'lucide-react';
 
 interface HowItWorksProps {
@@ -12,14 +13,11 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ isVisible }) => {
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-16 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-rose-400">
           How It Works
         </h2>
-        
+
         <div className="relative max-w-5xl mx-auto">
-          {/* Connecting line */}
           <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-blue-500/20 via-rose-500/20 to-transparent" />
-          
-          {/* Steps */}
+
           <div className="space-y-12 md:space-y-24">
-            {/* Step 1 */}
             <div className={`relative flex flex-col md:flex-row items-start md:items-center ${isVisible ? 'animate-fadeIn' : 'opacity-0'}`} style={{ animationDelay: '0.2s' }}>
               <div className="w-full md:w-1/2 md:pr-12 md:text-right pl-16 md:pl-0 mb-4 md:mb-0">
                 <div className="inline-flex items-center justify-center mb-4">
@@ -30,7 +28,7 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ isVisible }) => {
                     </div>
                   </div>
                 </div>
-                <h3 className="text-xl md:text-2xl font-semibold mb-2 text-white">Save Hello Aria's Number</h3>
+                <h3 className="text-xl md:text-2xl font-semibold mb-2 text-white">Save Hello Aria&apos;s Number</h3>
                 <p className="text-gray-400">Add our WhatsApp number to your contacts for instant access.</p>
                 <div className="mt-4">
                   <span className="inline-block bg-gradient-to-r from-blue-500/10 to-rose-500/10 border border-blue-500/20 rounded-lg px-3 py-1 md:px-4 md:py-2 text-white font-mono text-sm">
@@ -48,7 +46,6 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ isVisible }) => {
               </div>
             </div>
 
-            {/* Step 2 */}
             <div className={`relative flex flex-col md:flex-row items-start md:items-center ${isVisible ? 'animate-fadeIn' : 'opacity-0'}`} style={{ animationDelay: '0.4s' }}>
               <div className="absolute left-6 md:left-1/2 top-2 md:top-1/2 w-8 h-8 md:w-12 md:h-12 md:-ml-6 flex items-center justify-center">
                 <div className="relative">
@@ -68,11 +65,10 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ isVisible }) => {
                   </div>
                 </div>
                 <h3 className="text-xl md:text-2xl font-semibold mb-2 text-white">Send a Message</h3>
-                <p className="text-gray-400">Start a chat with "Hello" to begin your productivity journey.</p>
+                <p className="text-gray-400">Start a chat with &quot;Hello&quot; to begin your productivity journey.</p>
               </div>
             </div>
 
-            {/* Step 3 */}
             <div className={`relative flex flex-col md:flex-row items-start md:items-center ${isVisible ? 'animate-fadeIn' : 'opacity-0'}`} style={{ animationDelay: '0.6s' }}>
               <div className="w-full md:w-1/2 md:pr-12 md:text-right pl-16 md:pl-0 mb-4 md:mb-0">
                 <div className="inline-flex items-center justify-center mb-4">
@@ -99,7 +95,6 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ isVisible }) => {
         </div>
       </div>
 
-      {/* Enhanced background effects */}
       <div className="absolute top-1/2 -right-32 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse-slow" />
       <div className="absolute bottom-0 -left-32 w-96 h-96 bg-rose-500/10 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }} />
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-950/5 to-transparent -z-10" />
