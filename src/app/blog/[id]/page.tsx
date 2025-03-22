@@ -9,8 +9,8 @@ import Footer from '@/components/Footer';
 import blogPosts from '@/lib/blog-data';
 
 export default function BlogPost() {
-  const params = useParams<{ id: string }>();
-  const id = Number(params?.id ?? -1);
+  const params = useParams();
+  const id = Number(params?.id);
   const [showPrivacyPolicy, setShowPrivacyPolicy] = useState(false);
 
   const post = blogPosts.find((p) => p.id === Number(params?.id ?? -1));console.log('Post ID:', params?.id, post);
