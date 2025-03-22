@@ -1,7 +1,7 @@
 import React from 'react';
 import { cn } from '../lib/utils';
 
-interface Message {
+export interface Message {
   text: string;
   sender: 'user' | 'ai';
   highlight?: string;
@@ -21,9 +21,9 @@ const FeatureDialog: React.FC<FeatureDialogProps> = ({ messages, isVisible, posi
       className={cn(
         "absolute left-1/2 -translate-x-1/2 w-72 bg-black/90 backdrop-blur-lg rounded-xl p-4 border border-indigo-500/30 shadow-2xl",
         position === 'top' ? "-top-[280px]" : "-bottom-[280px]",
-        "z-50" // Higher z-index to ensure dialogs are always on top
+        "z-50"
       )}
-      style={{ pointerEvents: 'none' }} // Prevents dialog from blocking hover state
+      style={{ pointerEvents: 'none' }}
     >
       <div className="space-y-3">
         {messages.map((message, index) => (
