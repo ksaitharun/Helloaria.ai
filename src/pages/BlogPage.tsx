@@ -1,82 +1,83 @@
-import React from 'react';
+'use client';
+
+import { useState } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowLeft } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import Footer from '../components/Footer';
+import Footer from '@/components/Footer'; // Adjust path if needed
 
-const BlogPage = () => {
-  const [showPrivacyPolicy, setShowPrivacyPolicy] = React.useState(false);
+const blogPosts = [
+  {
+    id: 1,
+    title: "The Ultimate Guide to WhatsApp Task Management",
+    excerpt: "Boost Productivity with AI-Powered Task Management on WhatsApp...",
+    category: "Task Management",
+    readTime: "6 min read",
+    date: "March 13, 2024",
+    author: "Team Aria",
+    image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    id: 2,
+    title: "Mastering Google Calendar Integration with Hello Aria",
+    excerpt: "Sync Your Tasks, Events & Reminders with AI Precision...",
+    category: "Integration",
+    readTime: "7 min read",
+    date: "March 12, 2024",
+    author: "Team Aria",
+    image: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    id: 3,
+    title: "How Hello Aria's WhatsApp AI Assistant Enhances Productivity",
+    excerpt: "Discover how our AI-powered WhatsApp assistant revolutionizes task management...",
+    category: "Productivity",
+    readTime: "5 min read",
+    date: "March 14, 2024",
+    author: "Team Aria",
+    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    id: 4,
+    title: "Automated Messaging: Save Time with Hello Aria",
+    excerpt: "Explore how automated messaging can streamline communication...",
+    category: "Automation",
+    readTime: "4 min read",
+    date: "March 11, 2024",
+    author: "Team Aria",
+    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    id: 5,
+    title: "Advanced OCR Features: From Images to Text",
+    excerpt: "Unlock the power of OCR technology to extract text from images...",
+    category: "Features",
+    readTime: "5 min read",
+    date: "March 10, 2024",
+    author: "Team Aria",
+    image: "https://images.unsplash.com/photo-1633613286991-611fe299c4be?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    id: 6,
+    title: "Hello Aria for Teams: Collaborative Task Management",
+    excerpt: "How teams can leverage Hello Aria to improve collaboration...",
+    category: "Teams",
+    readTime: "6 min read",
+    date: "March 9, 2024",
+    author: "Team Aria",
+    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
+  }
+];
 
-  const blogPosts = [
-    {
-      id: 1,
-      title: "The Ultimate Guide to WhatsApp Task Management",
-      excerpt: "Boost Productivity with AI-Powered Task Management on WhatsApp. Managing tasks effectively can be overwhelming, but Hello Aria makes it seamless with its AI-powered WhatsApp assistant.",
-      content: "Managing tasks effectively can be overwhelming, but Hello Aria makes it seamless with its AI-powered WhatsApp assistant. Whether you're organizing daily to-dos, scheduling reminders, or setting work priorities, this guide will help you maximize your productivity using AI task management tools.",
-      category: "Task Management",
-      readTime: "6 min read",
-      date: "March 13, 2024",
-      author: "Team Aria",
-      image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      id: 2,
-      title: "Mastering Google Calendar Integration with Hello Aria",
-      excerpt: "Sync Your Tasks, Events & Reminders with AI Precision. With Hello Aria's AI calendar assistant, you can seamlessly connect your tasks with Google Calendar.",
-      content: "With Hello Aria's AI calendar assistant, you can seamlessly connect your tasks with Google Calendar, ensuring a more organized and structured approach to scheduling.",
-      category: "Integration",
-      readTime: "7 min read",
-      date: "March 12, 2024",
-      author: "Team Aria",
-      image: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      id: 3,
-      title: "How Hello Aria's WhatsApp AI Assistant Enhances Productivity",
-      excerpt: "Discover how our AI-powered WhatsApp assistant revolutionizes task management and automates your daily schedule.",
-      category: "Productivity",
-      readTime: "5 min read",
-      date: "March 14, 2024",
-      author: "Team Aria",
-      image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      id: 4,
-      title: "Automated Messaging: Save Time with Hello Aria",
-      excerpt: "Explore how automated messaging can streamline your communication and increase efficiency.",
-      category: "Automation",
-      readTime: "4 min read",
-      date: "March 11, 2024",
-      author: "Team Aria",
-      image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      id: 5,
-      title: "Advanced OCR Features: From Images to Text",
-      excerpt: "Unlock the power of OCR technology to extract text from images and manage documents effortlessly.",
-      category: "Features",
-      readTime: "5 min read",
-      date: "March 10, 2024",
-      author: "Team Aria",
-      image: "https://images.unsplash.com/photo-1633613286991-611fe299c4be?auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      id: 6,
-      title: "Hello Aria for Teams: Collaborative Task Management",
-      excerpt: "How teams can leverage Hello Aria to improve collaboration and streamline project management.",
-      category: "Teams",
-      readTime: "6 min read",
-      date: "March 9, 2024",
-      author: "Team Aria",
-      image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
-    }
-  ];
+export default function BlogPage() {
+  const [showPrivacyPolicy, setShowPrivacyPolicy] = useState(false);
 
   return (
     <div className="min-h-screen pt-24">
       <div className="container mx-auto px-6">
         <div className="mb-12">
           <Link 
-            to="/" 
+            href="/" 
             className="inline-flex items-center text-indigo-400 hover:text-indigo-300 transition-colors duration-300"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
@@ -95,12 +96,13 @@ const BlogPage = () => {
                 key={post.id}
                 className="bg-white/5 backdrop-blur-lg rounded-2xl overflow-hidden border border-white/10 transition-all duration-300 hover:border-indigo-500/50 hover:transform hover:-translate-y-1"
               >
-                <Link to={`/blog/${post.id}`} className="block">
+                <Link href={`/blog/${post.id}`} className="block">
                   <div className="relative h-48">
-                    <img 
+                    <Image 
                       src={post.image} 
                       alt={post.title}
-                      className="absolute inset-0 w-full h-full object-cover"
+                      fill
+                      className="object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent" />
                     <div className="absolute bottom-4 left-4">
@@ -141,6 +143,4 @@ const BlogPage = () => {
       />
     </div>
   );
-};
-
-export default BlogPage;
+}
