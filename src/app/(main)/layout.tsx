@@ -1,4 +1,5 @@
-import './globals.css';
+// Remove the import for globals.css as it's already imported in root layout
+// import './globals.css'; 
 
 export const metadata = {
   title: 'Hello Aria',
@@ -11,9 +12,9 @@ export default function MainLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <head />
-      <body>{children}</body>
-    </html>
+    // Replace HTML/body with a simple div wrapper
+    <div className="main-content-wrapper">
+      {children}
+    </div>
   );
 }
