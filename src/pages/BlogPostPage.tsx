@@ -52,13 +52,12 @@ const blogPosts: Record<number, BlogPost> = {
 };
 
 export default function BlogPostPage() {
-  const params = useParams() as { id?: string };
-  const id = params.id;
-  const [showPrivacyPolicy, setShowPrivacyPolicy] = useState(false);
-
-  const post = id ? blogPosts[Number(id)] : null;
-
-  if (!post) {
+  const params = useParams();
+  const id = typeof params?.id === 'string' ? Number(params.id) : null;
+  
+  const post = id ? blogPosts[id] : null;
+  
+  if (!id || !post) {
     return (
       <div className="min-h-screen pt-24">
         <div className="container mx-auto px-6 text-center">
