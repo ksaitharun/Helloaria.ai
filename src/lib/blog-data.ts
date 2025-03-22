@@ -1,4 +1,4 @@
-export const blogPosts = [
+const blogPosts = [
   {
     id: 1,
     title: "How Hello Aria's WhatsApp AI Assistant Enhances Productivity 🚀",
