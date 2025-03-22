@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation'; // ✅ Correct import
+import ariaIcon from '@/../public/assets/aria-icon.svg';
 import {
   Bell, Calendar, CheckCircle, ListTodo, Mic, Image as ImageIcon,
   Users, Settings, LogOut, Mail, FileText, Globe, ChevronLeft, ChevronRight,
@@ -186,7 +187,7 @@ const DashboardPage = () => {
           {isSidebarOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
         <div className="flex items-center space-x-3">
-          <img src={ariaIcon} alt="Aria" className="w-8 h-8" />
+          <Image src={ariaIcon} alt="Aria" width={32} height={32} className="w-8 h-8" />
           <div>
             <h1 className="text-lg font-bold">Hello Aria</h1>
             <p className="text-sm text-gray-400">Dashboard</p>
@@ -208,7 +209,7 @@ const DashboardPage = () => {
           <div className="hidden md:flex items-center space-x-3 mb-8">
             <div className="relative">
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-rose-500 rounded-full opacity-20 blur" />
-              <img src={ariaIcon} alt="Aria" className="w-10 h-10 relative" />
+              <Image src={ariaIcon} alt="Aria" width={40} height={40} className="w-10 h-10 relative" />
             </div>
             <div>
               <h1 className="text-lg font-bold">Hello Aria</h1>
