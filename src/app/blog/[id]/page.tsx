@@ -6,7 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowLeft } from 'lucide-react';
 import Footer from '@/components/Footer';
-import { blogPosts } from '@/lib/blog-data';
+import blogPosts from '@/lib/blog-data';
 
 export default function BlogPost() {
   const params = useParams<{ id: string }>();
