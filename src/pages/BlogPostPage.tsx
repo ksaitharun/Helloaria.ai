@@ -43,7 +43,8 @@ const blogPosts: Record<number, any> = {
 };
 
 export default function BlogPostPage() {
-  const { id } = useParams();
+  const params = useParams() as { id: string };
+  const id = params.id;
   const [showPrivacyPolicy, setShowPrivacyPolicy] = useState(false);
   const post = blogPosts[Number(id)];
 
