@@ -1,4 +1,4 @@
-'use client'; // Add this line!
+// Add this line!
 
 export default function MainLayout({
   children,
