@@ -3,8 +3,8 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { ArrowLeft, ChevronDown } from 'lucide-react';
-import { cn } from '@/lib/utils'; // Make sure this exists, or replace with your own `cn` function
-import Footer from '@/components/Footer'; // Adjust this path if your structure differs
+import { cn } from '../lib/utils'; // Make sure this exists, or replace with your own `cn` function
+import Footer from '../components/Footer'; // Adjust this path if your structure differs
 
 const FAQPage = () => {
   const [openQuestion, setOpenQuestion] = useState<number | null>(null);
