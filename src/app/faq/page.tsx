@@ -1,12 +1,12 @@
-'use client'
+'use client';
 
-import { useState } from 'react'
-import Link from 'next/link'
-import { ArrowLeft, ChevronDown } from 'lucide-react'
-import { cn } from '@/lib/utils'
-import Footer from '@/components/Footer'
+import React, { useState } from 'react';
+import Link from 'next/link';
+import { ArrowLeft, ChevronDown } from 'lucide-react';
+import { cn } from '../lib/utils'; // Make sure this exists, or replace with your own `cn` function
+import Footer from '../components/Footer'; // Adjust this path if your structure differs
 
-export default function FAQ() {
+const FAQPage = () => {
   const [openQuestion, setOpenQuestion] = useState<number | null>(null);
   const [showPrivacyPolicy, setShowPrivacyPolicy] = useState(false);
 
@@ -104,4 +104,6 @@ export default function FAQ() {
       />
     </div>
   );
-}
+};
+
+export default FAQPage;
