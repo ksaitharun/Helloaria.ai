@@ -1,4 +1,4 @@
-
+'use client';
 import { useState, useEffect } from 'react'
 import Hero from '@/components/Hero'
 import About from '@/components/About'
