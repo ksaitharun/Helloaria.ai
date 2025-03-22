@@ -292,7 +292,7 @@ const DashboardPage = () => {
               {Object.keys(lists).map((tab) => (
                 <button
                   key={tab}
-                  onClick={() => setActiveListTab(tab)}
+                  onClick={() => setActiveListTab(tab as ListTab)}
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors whitespace-nowrap ${
                     activeListTab === tab
                       ? 'bg-blue-500/20 text-blue-400'
