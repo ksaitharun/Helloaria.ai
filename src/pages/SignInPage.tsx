@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { ArrowLeft } from 'lucide-react';
-import ariaIcon from '../public/aria-icon.svg'; // adjust if needed
+import ariaIcon from '/public/assets/aria-icon.svg'; // adjust if needed
 
 const SignInPage = () => {
   const router = useRouter();
