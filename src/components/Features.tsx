@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Bell, ListTodo, Image, MessageCircle, Globe, LayoutDashboard } from 'lucide-react';
 import FeatureDialog from './FeatureDialog';
+import type { Message } from './FeatureDialog';
 
 interface FeaturesProps {
   isVisible: boolean;
@@ -9,7 +10,13 @@ interface FeaturesProps {
 const Features: React.FC<FeaturesProps> = ({ isVisible }) => {
   const [activeFeature, setActiveFeature] = useState<number | null>(null);
 
-  const features = [
+  const features: {
+    icon: any;
+    title: string;
+    description: string;
+    color: string;
+    messages: Message[];
+  }[] = [
     {
       icon: Bell,
       title: "AI-powered Reminders",
