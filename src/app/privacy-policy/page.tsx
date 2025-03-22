@@ -30,14 +30,14 @@ export default function PrivacyPolicy() {
 
             <h2>Introduction</h2>
             <p>
-              Welcome to ARIA, the WhatsApp AI chatbot service provided by Realityrift Innovations Pvt. Ltd. ("we," "us," or "our"). 
+              Welcome to ARIA, the WhatsApp AI chatbot service provided by Realityrift Innovations Pvt. Ltd. (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;). 
               We value your privacy and are committed to protecting your personal information.
             </p>
 
             <div className="bg-indigo-500/10 border border-indigo-500/20 rounded-lg p-4 my-6">
               <h3 className="text-indigo-400 mt-0">Key Privacy Assurance:</h3>
               <ul className="mb-0">
-                <li>End-to-End Encryption: We do not store or process the content of your messages (text, images, or files) as they are secured by WhatsApp's end-to-end encryption.</li>
+                <li>End-to-End Encryption: We do not store or process the content of your messages (text, images, or files) as they are secured by WhatsApp&apos;s end-to-end encryption.</li>
                 <li>India-Focused Compliance: This Privacy Policy applies primarily to users in India under the Digital Personal Data Protection (DPDP) Act, 2023.</li>
                 <li>International Users: If you are located outside India, your data may be transferred to India. We are actively working on compliance with GDPR (EU) and other applicable regulations.</li>
               </ul>
@@ -65,7 +65,7 @@ export default function PrivacyPolicy() {
               <li>Device Data: Your device type, operating system, browser, language settings, and time zone</li>
               <li>Usage Data: Frequency of use, duration of sessions, and interaction metadata</li>
               <li>Log Data: IP address, timestamps, and system errors</li>
-              <li>Cookies & Analytics: We may use cookies and similar technologies to enhance user experience (you can manage these through your device settings)</li>
+              <li>Cookies &amp; Analytics: We may use cookies and similar technologies to enhance user experience (you can manage these through your device settings)</li>
             </ul>
 
             <h3>C. Information from Third Parties</h3>
@@ -75,7 +75,7 @@ export default function PrivacyPolicy() {
               <li>Usage Insights: Engagement patterns and activity data</li>
             </ul>
 
-            <h2>Contact & Grievance Redressal</h2>
+            <h2>Contact &amp; Grievance Redressal</h2>
             <p>If you have questions or concerns, reach out to our Grievance Officer:</p>
             <p className="text-indigo-400">📩 Email: info@realityrift.co</p>
 
