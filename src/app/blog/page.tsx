@@ -6,68 +6,7 @@ import Image from 'next/image';
 import { ArrowLeft } from 'lucide-react';
 import Footer from '@/components/Footer'; // Adjust path if needed
 import { blogPosts } from '@/lib/blog-data';
-const blogPosts = [
-  {
-    id: 1,
-    title: "The Ultimate Guide to WhatsApp Task Management",
-    excerpt: "Boost Productivity with AI-Powered Task Management on WhatsApp...",
-    category: "Task Management",
-    readTime: "6 min read",
-    date: "March 13, 2024",
-    author: "Team Aria",
-    image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    id: 2,
-    title: "Mastering Google Calendar Integration with Hello Aria",
-    excerpt: "Sync Your Tasks, Events & Reminders with AI Precision...",
-    category: "Integration",
-    readTime: "7 min read",
-    date: "March 12, 2024",
-    author: "Team Aria",
-    image: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    id: 3,
-    title: "How Hello Aria's WhatsApp AI Assistant Enhances Productivity",
-    excerpt: "Discover how our AI-powered WhatsApp assistant revolutionizes task management...",
-    category: "Productivity",
-    readTime: "5 min read",
-    date: "March 14, 2024",
-    author: "Team Aria",
-    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    id: 4,
-    title: "Automated Messaging: Save Time with Hello Aria",
-    excerpt: "Explore how automated messaging can streamline communication...",
-    category: "Automation",
-    readTime: "4 min read",
-    date: "March 11, 2024",
-    author: "Team Aria",
-    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    id: 5,
-    title: "Advanced OCR Features: From Images to Text",
-    excerpt: "Unlock the power of OCR technology to extract text from images...",
-    category: "Features",
-    readTime: "5 min read",
-    date: "March 10, 2024",
-    author: "Team Aria",
-    image: "https://images.unsplash.com/photo-1633613286991-611fe299c4be?auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    id: 6,
-    title: "Hello Aria for Teams: Collaborative Task Management",
-    excerpt: "How teams can leverage Hello Aria to improve collaboration...",
-    category: "Teams",
-    readTime: "6 min read",
-    date: "March 9, 2024",
-    author: "Team Aria",
-    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
-  }
-];
+
 
 export default function BlogPage() {
   const [showPrivacyPolicy, setShowPrivacyPolicy] = useState(false);
