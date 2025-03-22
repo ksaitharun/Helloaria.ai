@@ -1,20 +1,22 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+'use client';
+
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 import { ArrowLeft } from 'lucide-react';
-import ariaIcon from '../assets/aria-icon.svg';
+import ariaIcon from '../public/aria-icon.svg'; // adjust if needed
 
 const SignInPage = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
   const [phone, setPhone] = useState('');
   const [pin, setPin] = useState('');
   const [error, setError] = useState('');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Simple validation for demo
+
     if (phone === '9985474932' && pin === '12345') {
-      navigate('/dashboard');
+      router.push('/dashboard');
     } else {
       setError('Invalid phone number or PIN');
     }
@@ -24,7 +26,7 @@ const SignInPage = () => {
     <div className="min-h-screen pt-24">
       <div className="container mx-auto px-6">
         <button 
-          onClick={() => navigate('/')}
+          onClick={() => router.push('/')}
           className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors duration-300 mb-12"
         >
           <ArrowLeft className="w-4 h-4 mr-2" />
@@ -35,7 +37,7 @@ const SignInPage = () => {
           <div className="text-center mb-8">
             <div className="inline-block relative mb-6">
               <div className="absolute -inset-2 bg-gradient-to-r from-blue-500 to-rose-500 rounded-full opacity-20 blur-lg" />
-              <img src={ariaIcon} alt="Aria" className="w-16 h-16 relative" />
+              <Image src={ariaIcon} alt="Aria" width={64} height={64} className="relative" />
             </div>
             <h1 className="text-3xl font-bold mb-2">Welcome Back</h1>
             <p className="text-gray-400">Sign in to access your dashboard</p>
