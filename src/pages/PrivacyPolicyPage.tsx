@@ -1,17 +1,19 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+'use client';
+
+import { useState } from 'react';
+import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import Footer from '../components/Footer';
 
-const PrivacyPolicyPage = () => {
-  const [showPrivacyPolicy, setShowPrivacyPolicy] = React.useState(false);
+export default function PrivacyPolicyPage() {
+  const [showPrivacyPolicy, setShowPrivacyPolicy] = useState(false);
 
   return (
     <div className="min-h-screen pt-24">
       <div className="container mx-auto px-6">
         <div className="mb-12">
           <Link 
-            to="/" 
+            href="/" 
             className="inline-flex items-center text-indigo-400 hover:text-indigo-300 transition-colors duration-300"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
@@ -119,7 +121,7 @@ const PrivacyPolicyPage = () => {
               <li>✔ Restrict Processing – Control how we use your data</li>
               <li>✔ Lodge Complaints – Contact the relevant data authority if needed</li>
             </ul>
-            <p>To exercise these rights, email us at privacy@realityrift.co</p>
+            <p>To exercise these rights, email us at <span className="text-indigo-400">privacy@realityrift.co</span></p>
 
             <h2>Contact & Grievance Redressal</h2>
             <p>If you have questions or concerns, reach out to our Grievance Officer:</p>
@@ -138,6 +140,4 @@ const PrivacyPolicyPage = () => {
       />
     </div>
   );
-};
-
-export default PrivacyPolicyPage;
+}
