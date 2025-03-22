@@ -28,8 +28,8 @@ export default function Terms() {
           <div className="prose prose-invert max-w-none">
             <h2>Welcome to ARIA</h2>
             <p>
-              Welcome to ARIA, an AI-powered WhatsApp chatbot service operated by Realityrift Innovations Pvt. Ltd. ("we," "us," or "our"). 
-              By accessing or using ARIA, you agree to these Terms of Service ("Terms") and our Privacy Policy. 
+              Welcome to ARIA, an AI-powered WhatsApp chatbot service operated by Realityrift Innovations Pvt. Ltd. (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;). 
+              By accessing or using ARIA, you agree to these Terms of Service (&quot;Terms&quot;) and our Privacy Policy. 
               If you do not agree, you may not use ARIA.
             </p>
 
@@ -50,14 +50,14 @@ export default function Terms() {
               <li>Other productivity-based functions</li>
             </ul>
 
-            <h3>Free Trial & Paid Subscription</h3>
+            <h3>Free Trial &amp; Paid Subscription</h3>
             <ul>
               <li>New users are eligible for a 7-day free trial of premium features</li>
               <li>After the trial period, continued access requires a paid subscription</li>
               <li>Users can upgrade, downgrade, or cancel their subscription at any time</li>
             </ul>
 
-            <h3>User Accounts & Registration</h3>
+            <h3>User Accounts &amp; Registration</h3>
             <p>To use ARIA, you must have:</p>
             <ul>
               <li>A valid WhatsApp account (your ARIA account is tied to your WhatsApp number)</li>
@@ -76,7 +76,7 @@ export default function Terms() {
             <p>By using ARIA, you agree to:</p>
             <ul>
               <li>Use ARIA for lawful purposes only</li>
-              <li>Follow WhatsApp's Terms of Service and Community Standards</li>
+              <li>Follow WhatsApp&apos;s Terms of Service and Community Standards</li>
               <li>Avoid any actions that may harm ARIA or its users</li>
             </ul>
 
@@ -92,19 +92,19 @@ export default function Terms() {
 
             <p>Failure to comply may result in immediate suspension or termination of your access to ARIA.</p>
 
-            <h3>Data Privacy & Security</h3>
+            <h3>Data Privacy &amp; Security</h3>
             <p>Your privacy is important to us. Please refer to our Privacy Policy for full details.</p>
             <div className="bg-indigo-500/10 border border-indigo-500/20 rounded-lg p-4 my-6">
               <h4 className="text-indigo-400 mt-0">Key Privacy Commitments:</h4>
               <ul className="mb-0">
-                <li>We do not store message content due to WhatsApp's end-to-end encryption</li>
+                <li>We do not store message content due to WhatsApp&apos;s end-to-end encryption</li>
                 <li>We collect only minimal metadata (e.g., phone number, usage patterns)</li>
                 <li>We do not sell or share personal data with third parties for marketing purposes</li>
                 <li>Data is stored securely and used only to improve service performance</li>
               </ul>
             </div>
 
-            <h3>Contact Information & Support</h3>
+            <h3>Contact Information &amp; Support</h3>
             <p>For support, concerns, or legal inquiries, contact:</p>
             <p className="text-indigo-400">info@realityrift.co</p>
 
