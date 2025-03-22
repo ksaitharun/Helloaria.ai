@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { 
+'use client';
+
+import { useState } from 'react';
+import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+import {
   Bell, Calendar, CheckCircle, ListTodo, Mic, Image as ImageIcon,
   Users, Settings, LogOut, Mail, FileText, Globe, ChevronLeft, ChevronRight,
   Menu, X
 } from 'lucide-react';
-import ariaIcon from '../assets/aria-icon.svg';
-import SettingsDialog from '../components/SettingsDialog';
+import SettingsDialog from '@/components/SettingsDialog';
 
 interface Contact {
   id: string;
