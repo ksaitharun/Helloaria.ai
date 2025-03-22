@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowLeft } from 'lucide-react';
 import Footer from '@/components/Footer'; // Adjust path if needed
-import { blogPosts } from '@/lib/blog-data';
+import blogPosts from '@/lib/blog-data';
 
 
 export default function BlogPage() {
