@@ -1,11 +1,11 @@
-'use client'
+'use client';
 
-import { useState } from 'react'
-import Link from 'next/link'
-import { ArrowLeft } from 'lucide-react'
-import Footer from '@/components/Footer'
+import { useState } from 'react';
+import Link from 'next/link';
+import { ArrowLeft } from 'lucide-react';
+import Footer from '../components/Footer';
 
-export default function PrivacyPolicy() {
+export default function PrivacyPolicyPage() {
   const [showPrivacyPolicy, setShowPrivacyPolicy] = useState(false);
 
   return (
@@ -74,6 +74,54 @@ export default function PrivacyPolicy() {
               <li>Profile Information: Name, email, profile picture (as per your privacy settings)</li>
               <li>Usage Insights: Engagement patterns and activity data</li>
             </ul>
+
+            <h2>How We Use Your Data</h2>
+            <p>We use your information strictly for the following purposes:</p>
+            <ul>
+              <li>✅ Service Delivery: To operate, personalize, and enhance ARIA</li>
+              <li>✅ Communication: To send responses, updates, and essential notifications</li>
+              <li>✅ Security &amp; Fraud Prevention: To verify identities and prevent unauthorized access</li>
+              <li>✅ Analytics &amp; Service Improvement: To analyze trends and optimize ARIA&apos;s performance</li>
+              <li>✅ Legal Compliance: To adhere to regulatory requirements</li>
+            </ul>
+            <p>No Spam Policy: We do not send promotional messages without your explicit consent.</p>
+
+            <h2>Data Sharing &amp; Disclosure</h2>
+            <p>Your personal data is never sold or shared for marketing. We disclose data only in these cases:</p>
+
+            <h3>A. With Trusted Service Providers</h3>
+            <p>We may share data with third-party hosting, analytics, or security providers, ensuring:</p>
+            <ul>
+              <li>✔ Confidentiality agreements are in place</li>
+              <li>✔ Data is used solely for service enhancement</li>
+            </ul>
+
+            <h3>B. When Required by Law</h3>
+            <p>We may disclose data to government authorities if:</p>
+            <ul>
+              <li>⚖ Legally mandated (court orders, regulatory compliance)</li>
+              <li>⚖ To protect users, prevent fraud, or enforce legal rights</li>
+            </ul>
+
+            <h2>Data Security Measures</h2>
+            <ul>
+              <li>🔒 Encryption: Data is encrypted at rest and in transit</li>
+              <li>🔒 Access Controls: Only authorized personnel can access stored data</li>
+              <li>🔒 Regular Audits: Security systems are periodically reviewed and updated</li>
+              <li>🔒 Incident Response: A dedicated team monitors for potential breaches</li>
+            </ul>
+            <p>Despite these measures, no system is 100% secure. If you suspect unauthorized access, contact us immediately.</p>
+
+            <h2>Your Privacy Rights</h2>
+            <p>Under Indian and international privacy laws, you have the right to:</p>
+            <ul>
+              <li>✔ Access &amp; Correct Your Data – Request details of the data we hold</li>
+              <li>✔ Delete Your Data – Ask us to remove your information</li>
+              <li>✔ Withdraw Consent – Opt out of data collection (may limit functionality)</li>
+              <li>✔ Restrict Processing – Control how we use your data</li>
+              <li>✔ Lodge Complaints – Contact the relevant data authority if needed</li>
+            </ul>
+            <p>To exercise these rights, email us at <span className="text-indigo-400">privacy@realityrift.co</span></p>
 
             <h2>Contact &amp; Grievance Redressal</h2>
             <p>If you have questions or concerns, reach out to our Grievance Officer:</p>
