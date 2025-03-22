@@ -1,12 +1,14 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+'use client';
+
+import React, { useState } from 'react';
+import Link from 'next/link';
 import { ArrowLeft, ChevronDown } from 'lucide-react';
-import { cn } from '../lib/utils';
-import Footer from '../components/Footer';
+import { cn } from '@/lib/utils'; // Make sure this exists, or replace with your own `cn` function
+import Footer from '@/components/Footer'; // Adjust this path if your structure differs
 
 const FAQPage = () => {
-  const [openQuestion, setOpenQuestion] = React.useState<number | null>(null);
-  const [showPrivacyPolicy, setShowPrivacyPolicy] = React.useState(false);
+  const [openQuestion, setOpenQuestion] = useState<number | null>(null);
+  const [showPrivacyPolicy, setShowPrivacyPolicy] = useState(false);
 
   const faqs = [
     {
@@ -48,7 +50,7 @@ const FAQPage = () => {
       <div className="container mx-auto px-6">
         <div className="mb-12">
           <Link 
-            to="/" 
+            href="/" 
             className="inline-flex items-center text-indigo-400 hover:text-indigo-300 transition-colors duration-300"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
