@@ -30,7 +30,7 @@ interface ListItem {
   text: string;
   completed: boolean;
 }
-
+type ListTab = 'market' | 'work' | 'personal' | 'shopping';
 const DashboardPage = () => {
   const router = useRouter(); // ✅ Correct hook for navigation
   const [integrations, setIntegrations] = useState({
@@ -40,7 +40,7 @@ const DashboardPage = () => {
     flight: false
   });
   const [activeContactTab, setActiveContactTab] = useState<'family' | 'friends' | 'work'>('family');
-  const [activeListTab, setActiveListTab] = useState('market');
+  const [activeListTab, setActiveListTab] = useState<ListTab>('market');
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -50,7 +50,7 @@ const DashboardPage = () => {
     { id: '3', text: 'Remove AWS support', completed: false, date: 'Apr 29, 2025, 9:00 AM' }
   ]);
 
-  const [lists, setLists] = useState({
+  const [lists, setLists] = useState<Record<ListTab, ListItem[]>>({
     market: [
       { id: '1', text: 'milk', completed: false },
       { id: '2', text: 'bread', completed: false },
