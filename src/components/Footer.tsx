@@ -72,7 +72,7 @@ const Footer: React.FC<FooterProps> = ({ showPrivacyPolicy, setShowPrivacyPolicy
               <Instagram className="w-6 h-6 text-[#E4405F] transition-all duration-300 group-hover:scale-110" />
             </a>
             <a 
-              href="https://linkedin.com/company/HelloAria" 
+              href="https://www.linkedin.com/company/hello-aria" 
               target="_blank" 
               rel="noopener noreferrer"
               className="social-icon-link group"
