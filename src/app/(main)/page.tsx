@@ -72,7 +72,7 @@ export default function Home() {
       <Features isVisible={isVisible} />
       <HowItWorks isVisible={isVisible} />
       <Pricing isVisible={isVisible} handleRipple={handleRipple} />
-      <Testimonials 
+      <Testimonials
         isVisible={isVisible}
         activeTestimonial={activeTestimonial}
         setActiveTestimonial={setActiveTestimonial}
@@ -80,7 +80,7 @@ export default function Home() {
       />
       <AppleCTA handleRipple={handleRipple} />
       <BlogSection />
-      <Footer 
+      <Footer
         showPrivacyPolicy={showPrivacyPolicy}
         setShowPrivacyPolicy={setShowPrivacyPolicy}
       />

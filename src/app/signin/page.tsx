@@ -4,7 +4,6 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { ArrowLeft } from 'lucide-react';
-import ariaIcon from '/public/assets/aria-icon.svg'; // adjust if needed
 
 const SignInPage = () => {
   const router = useRouter();
@@ -24,28 +23,29 @@ const SignInPage = () => {
 
   return (
     <div className="min-h-screen pt-24">
-      <div className="container mx-auto px-6">
-        <button 
+      <div className="container px-6 mx-auto">
+        <button
           onClick={() => router.push('/')}
-          className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors duration-300 mb-12"
+          className="inline-flex items-center mb-12 text-blue-400 transition-colors duration-300 hover:text-blue-300"
         >
           <ArrowLeft className="w-4 h-4 mr-2" />
           Back to Home
         </button>
 
         <div className="max-w-md mx-auto">
-          <div className="text-center mb-8">
-            <div className="inline-block relative mb-6">
-              <div className="absolute -inset-2 bg-gradient-to-r from-blue-500 to-rose-500 rounded-full opacity-20 blur-lg" />
-              <Image src={ariaIcon} alt="Aria" width={64} height={64} className="relative" />
+          <div className="mb-8 text-center">
+            <div className="relative inline-block mb-6">
+              <div className="absolute rounded-full -inset-2 bg-gradient-to-r from-blue-500 to-rose-500 opacity-20 blur-lg" />
+              <Image src={"/assets/aria-icon.svg"} alt="Aria" width={64} height={64} className="relative" />
+
             </div>
-            <h1 className="text-3xl font-bold mb-2">Welcome Back</h1>
+            <h1 className="mb-2 text-3xl font-bold">Welcome Back</h1>
             <p className="text-gray-400">Sign in to access your dashboard</p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-2">
+              <label htmlFor="phone" className="block mb-2 text-sm font-medium text-gray-300">
                 Phone Number
               </label>
               <input
@@ -53,13 +53,13 @@ const SignInPage = () => {
                 id="phone"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
-                className="w-full px-4 py-3 bg-black/50 border border-blue-500/20 rounded-lg focus:outline-none focus:border-blue-500/50 text-white"
+                className="w-full px-4 py-3 text-white border rounded-lg bg-black/50 border-blue-500/20 focus:outline-none focus:border-blue-500/50"
                 placeholder="Enter your phone number"
               />
             </div>
 
             <div>
-              <label htmlFor="pin" className="block text-sm font-medium text-gray-300 mb-2">
+              <label htmlFor="pin" className="block mb-2 text-sm font-medium text-gray-300">
                 PIN
               </label>
               <input
@@ -67,19 +67,19 @@ const SignInPage = () => {
                 id="pin"
                 value={pin}
                 onChange={(e) => setPin(e.target.value)}
-                className="w-full px-4 py-3 bg-black/50 border border-blue-500/20 rounded-lg focus:outline-none focus:border-blue-500/50 text-white"
+                className="w-full px-4 py-3 text-white border rounded-lg bg-black/50 border-blue-500/20 focus:outline-none focus:border-blue-500/50"
                 placeholder="Enter your PIN"
                 maxLength={5}
               />
             </div>
 
             {error && (
-              <p className="text-rose-500 text-sm">{error}</p>
+              <p className="text-sm text-rose-500">{error}</p>
             )}
 
             <button
               type="submit"
-              className="w-full bg-gradient-to-r from-blue-500 to-rose-500 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:opacity-90"
+              className="w-full px-6 py-3 font-semibold text-white transition-all duration-300 rounded-lg bg-gradient-to-r from-blue-500 to-rose-500 hover:opacity-90"
             >
               Sign In
             </button>
