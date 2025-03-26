@@ -59,7 +59,7 @@ const About: React.FC<AboutProps> = ({ isVisible }) => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
                 <div className="bg-gradient-to-br from-black/80 to-black/40 backdrop-blur-lg rounded-2xl p-4 md:p-6 border border-blue-500/20 transition-all duration-300 hover:border-blue-500/40 hover:-translate-y-1 group">
                   <div className="text-2xl md:text-3xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-rose-400">
-                    50K+
+                    -
                   </div>
                   <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
                     Active Users
@@ -67,7 +67,7 @@ const About: React.FC<AboutProps> = ({ isVisible }) => {
                 </div>
                 <div className="bg-gradient-to-br from-black/80 to-black/40 backdrop-blur-lg rounded-2xl p-4 md:p-6 border border-blue-500/20 transition-all duration-300 hover:border-blue-500/40 hover:-translate-y-1 group">
                   <div className="text-2xl md:text-3xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-rose-400 to-blue-400">
-                    1M+
+                    -
                   </div>
                   <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
                     Tasks Managed
@@ -85,7 +85,7 @@ const About: React.FC<AboutProps> = ({ isVisible }) => {
                 </div>
                 <div className="bg-gradient-to-br from-black/80 to-black/40 backdrop-blur-lg rounded-2xl p-4 md:p-6 border border-blue-500/20 transition-all duration-300 hover:border-blue-500/40 hover:-translate-y-1 group">
                   <div className="text-2xl md:text-3xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-rose-400 to-blue-400">
-                    4.9/5
+                    -
                   </div>
                   <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
                     User Rating
